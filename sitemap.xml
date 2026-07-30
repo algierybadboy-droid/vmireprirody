@@ -10,14 +10,14 @@
 
     <!-- Статья про волков -->
     <url>
-        <loc>https://vmireprirody.rukak-obshayutsya-volki.html</loc>
+        <loc>https://vmireprirody.ru/kak-obshayutsya-volki.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <!-- Статья про Марианскую впадину -->
     <url>
-        <loc>https://vmireprirody.rutajny-marianskoj-vpadiny.html</loc>
+        <loc>https://vmireprirody.ru/tajny-marianskoj-vpadiny.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
