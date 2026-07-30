@@ -3,104 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>В мире природы — Познавательный портал о планете Земля</title>
-    <meta name="description" content="Информационные статьи, уникальные факты и материалы о диких животных, тайнах подводного мира, красивых островах, скалах и загадках природы.">
+    <title>В мире природы — Авторский блог о дикой природе и загадках планеты</title>
+    <meta name="description" content="Уникальные факты о животных, тайнах океанских глубин и аномальных явлениях природы. Чистый текстовый путеводитель по самым загадочным уголкам Земли.">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; }
-        body { background-color: #f4f6f4; color: #2c3e2f; line-height: 1.8; padding: 30px 10px; }
-        .wrapper { max-width: 950px; margin: 0 auto; background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+        body { background-color: #f4f6f4; color: #2c3e2f; line-height: 1.6; padding-bottom: 60px; }
+        .wrapper { max-width: 900px; margin: 0 auto; background: #ffffff; padding: 30px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
         
-        header { text-align: center; border-bottom: 3px solid #2d5a27; padding-bottom: 25px; margin-bottom: 30px; }
-        h1 { color: #1e3b1a; font-size: 2.6rem; margin-bottom: 8px; letter-spacing: -0.5px; }
-        header p { color: #6e7c6e; font-size: 1.2rem; font-style: italic; }
-        
-        nav { margin-bottom: 40px; background: #2d5a27; padding: 12px; border-radius: 8px; text-align: center; }
-        nav a { color: #ffffff; text-decoration: none; font-weight: bold; margin: 0 15px; display: inline-block; font-size: 1.05rem; transition: color 0.2s; }
-        nav a:hover { color: #a4cfa1; }
+        /* Шапка сайта */
+        header { text-align: center; padding: 40px 10px; background: #edf3ee; border-radius: 12px; margin-bottom: 20px; }
+        header h1 { color: #1e3b1a; font-size: 2.5rem; margin-bottom: 10px; letter-spacing: -1px; }
+        header p { color: #556b55; font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
 
-        .seo-intro { background: #edf3ee; padding: 25px; border-left: 5px solid #2d5a27; border-radius: 0 8px 8px 0; margin-bottom: 45px; font-size: 1.1rem; }
-        
-        .section-title { color: #1e3b1a; font-size: 1.8rem; margin: 40px 0 20px; padding-left: 10px; border-left: 4px solid #2d5a27; }
-        .article-card { background: #fafdfa; border: 1px solid #e1ebe1; padding: 25px; border-radius: 8px; margin-bottom: 25px; transition: transform 0.2s, box-shadow 0.2s; }
-        .article-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
-        .article-card h3 { margin-bottom: 10px; }
-        .article-card h3 a { color: #2d5a27; text-decoration: none; font-size: 1.3rem; }
-        .article-card h3 a:hover { color: #0066cc; text-decoration: underline; }
-        .article-card p { color: #4a574a; font-size: 1rem; }
+        /* ПЛАВАЮЩЕЕ МЕНЮ (STICKY) */
+        nav { 
+            position: -webkit-sticky; /* Поддержка Safari */
+            position: sticky; 
+            top: 0; 
+            background: #2d5a27; 
+            padding: 15px 10px; 
+            z-index: 1000; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        nav a { color: #ffffff; text-decoration: none; font-weight: bold; margin: 0 15px; font-size: 1.05rem; display: inline-block; }
+        nav a:hover { text-decoration: underline; color: #edf3ee; }
 
-        footer { margin-top: 60px; text-align: center; color: #8a968a; font-size: 0.95rem; border-top: 1px solid #e1ebe1; padding-top: 25px; }
+        /* Стили рубрик и карточек */
+        section { padding: 60px 0 20px; border-bottom: 1px solid #edf3ee; }
+        section:last-of-type { border-bottom: none; }
+        .section-title { color: #1e3b1a; font-size: 1.8rem; margin-bottom: 25px; border-left: 5px solid #2d5a27; padding-left: 15px; }
+        
+        .article-card { background: #fafdfa; border: 1px solid #e1ebe1; padding: 25px; border-radius: 8px; margin-bottom: 20px; transition: transform 0.2s, box-shadow 0.2s; }
+        .article-card:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(45,90,39,0.05); }
+        .article-card h3 { margin-bottom: 10px; font-size: 1.35rem; }
+        .article-card h3 a { color: #2d5a27; text-decoration: none; }
+        .article-card h3 a:hover { text-decoration: underline; }
+        .article-card p { color: #555; font-size: 1.05rem; text-align: justify; }
+
+        footer { margin-top: 60px; text-align: center; color: #8a968a; font-size: 0.95rem; border-top: 1px solid #edf3ee; padding-top: 30px; }
+
+        /* Адаптивность под мобильные телефоны */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            nav { padding: 10px 5px; }
+            nav a { margin: 5px 8px; font-size: 0.95rem; }
+            .wrapper { padding: 15px; }
+            section { padding: 40px 0 10px; }
+        }
     </style>
 </head>
 <body>
+
+<nav>
+    <a href="#animals">Животный мир</a>
+    <a href="#ocean">Подводный мир</a>
+    <a href="#places">Удивительные места</a>
+    <a href="#mysteries">Загадки планеты</a>
+</nav>
 
 <div class="wrapper">
 
     <header>
         <h1>В мире природы</h1>
-        <p>Погружение в тайны и красоту нашей планеты</p>
+        <p>Ваша личная текстовая энциклопедия о самых удивительных обитателях Земли, тайнах океанских глубин и загадочных феноменах нашей планеты.</p>
     </header>
-
-    <nav>
-        <a href="#animals">Животный мир</a>
-        <a href="#places">Удивительные места</a>
-        <a href="#ocean">Подводный мир</a>
-        <a href="#mysteries">Загадки планеты</a>
-    </nav>
-
-    <div class="seo-intro">
-        <p>Добро пожаловать на научно-популярный портал <strong>vmireprirody.ru</strong>. Наша цель — собирать самые надежные факты, глубокие исследования и увлекательные материалы обо всем, что создано природой. От микроорганизмов в каплях океанской воды до величественных скал и непроходимых лесов тайги.</p>
-    </div>
 
     <main>
         <!-- РУБРИКА: ЖИВОТНЫЕ -->
         <section id="animals">
             <h2 class="section-title">Животный мир</h2>
+            
             <div class="article-card">
                 <h3><a href="kak-obshayutsya-volki.html">Как общаются волки: тайный язык волчьей стаи</a></h3>
                 <p>Разбор того, как волки используют вой, мимику и запахи для координации на охоте. Уникальные факты о социальной иерархии хищников...</p>
             </div>
-                        <div class="article-card">
+
+            <div class="article-card">
                 <h3><a href="tajny-manula.html">Тайная жизнь манула: самый скрытный кот планеты</a></h3>
                 <p>Анатомические секреты палласова кота, особенности выживания в экстремальных морозах Сибири и уникальная тактика маскировки манула...</p>
-            </div>
-
-        </section>
-
-        <!-- РУБРИКА: МЕСТА -->
-        <section id="places">
-            <h2 class="section-title">Удивительные места</h2>
-            <div class="article-card">
-                <h3><a href="skaly-luzhicy.html">Загадочные скалы Лужицы: как природа создала каменный лабиринт</a></h3>
-                <p>История формирования невероятных песчаниковых скал. Геологические процессы, которые длились миллионы лет, и лучшие маршруты для исследователей...</p>
             </div>
         </section>
 
         <!-- РУБРИКА: ПОДВОДНЫЙ МИР -->
         <section id="ocean">
             <h2 class="section-title">Подводный мир</h2>
+            
             <div class="article-card">
                 <h3><a href="tajny-marianskoj-vpadiny.html">Кто живет на дне Марианской впадины: жизнь в абсолютной темноте</a></h3>
-                <p>Исследование глубоководных существ, способных выдерживать колоссальное давление. Как устроена биосфера на глубине 11 тысяч метров...</p>
+                <p>Научно-популярный разбор биосферы Марианского желоба. Какие существа обитают на глубине 11 000 метров в условиях колоссального давления...</p>
+            </div>
+        </section>
+
+        <!-- РУБРИКА: УДИВИТЕЛЬНЫЕ МЕСТА -->
+        <section id="places">
+            <h2 class="section-title">Удивительные места</h2>
+            
+            <div class="article-card">
+                <h3><a href="skaly-luzhicy.html">Загадочные скалы Лужицы: как природа создала каменный лабиринт</a></h3>
+                <p>Уникальный геологический разбор песчаниковых скал Лужицы. Как природные факторы за миллионы лет превратили горный массив в причудливый лабиринт...</p>
             </div>
         </section>
 
         <!-- РУБРИКА: ЗАГАДКИ -->
         <section id="mysteries">
             <h2 class="section-title">Загадки планеты</h2>
+            
             <div class="article-card">
                 <h3><a href="pochemu-shmygaet-molniya.html">Грязные грозы: почему вулканы извергают молнии</a></h3>
                 <p>Редчайшее и красивейшее природное явление. Физика процесса: как вулканический пепел генерирует электрические разряды колоссальной мощности...</p>
             </div>
-                        <div class="article-card">
+
+            <div class="article-card">
                 <h3><a href="dvizhushshiesya-kamni.html">Загадка Долины Смерти: почему камни двигаются сами по себе</a></h3>
                 <p>Научный разбор мистического феномена на озере Рейстрэк-Плайя. Уникальное сочетание ветра, тонкого льда и жидкой глины, двигающее 300-килограммовые глыбы...</p>
             </div>
-
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 vmireprirody.ru — Авторский блог о природе. Все права защищены.</p>
+        <p>&copy; 2026 vmireprirody.ru — Авторская текстовая энциклопедия. Все права защищены.</p>
     </footer>
 
 </div>
