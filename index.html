@@ -51,6 +51,10 @@
             .wrapper { padding: 15px; }
             section { padding: 40px 0 10px; }
         }
+                /* КНОПКА ПОКАЗАТЬ ВСЕ */
+        .show-more-btn { display: block; width: 200px; margin: 25px auto 0; background: #edf3ee; color: #2d5a27; border: 1px solid #d1ebd1; padding: 12px 20px; font-size: 1rem; font-weight: bold; border-radius: 8px; cursor: pointer; text-align: center; transition: all 0.2s; }
+        .show-more-btn:hover { background: #2d5a27; color: #ffffff; border-color: #2d5a27; }
+
     </style>
     <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -165,6 +169,8 @@
                 <h3><a href="tajny-manula.html">Тайная жизнь манула: самый скрытный кот планеты</a></h3>
                 <p>Анатомические секреты палласова кота, особенности выживания в экстремальных морозах Сибири и уникальная тактика маскировки манула...</p>
             </div>
+                        <button class="show-more-btn" onclick="toggleSection('animals')">Показать все</button>
+
         </section>
 
         <!-- РУБРИКА: ПОДВОДНЫЙ МИР -->
@@ -245,6 +251,8 @@
                 <h3><a href="tajny-marianskoj-vpadiny.html">Кто живет на дне Марианской впадины: жизнь в абсолютной темноте</a></h3>
                 <p>Научно-популярный разбор биосферы Марианского желоба. Какие существа обитают на глубине 11 000 метров в условиях колоссального давления...</p>
             </div>
+                        <button class="show-more-btn" onclick="toggleSection('ocean')">Показать все</button>
+
         </section>
 
         <!-- РУБРИКА: УДИВИТЕЛЬНЫЕ МЕСТА -->
@@ -285,6 +293,8 @@
                 <h3><a href="skaly-luzhicy.html">Загадочные скалы Лужицы: как природа создала каменный лабиринт</a></h3>
                 <p>Уникальный геологический разбор песчаниковых скал Лужицы. Как природные факторы за миллионы лет превратили горный массив в причудливый лабиринт...</p>
             </div>
+                        <button class="show-more-btn" onclick="toggleSection('places')">Показать все</button>
+
         </section>
 
         <!-- РУБРИКА: ЗАГАДКИ -->
@@ -345,6 +355,8 @@
                 <h3><a href="dvizhushshiesya-kamni.html">Загадка Долины Смерти: почему камни двигаются сами по себе</a></h3>
                 <p>Научный разбор мистического феномена на озере Рейстрэк-Плайя. Уникальное сочетание ветра, тонкого льда и жидкой глины, двигающее 300-килограммовые глыбы...</p>
             </div>
+                        <button class="show-more-btn" onclick="toggleSection('mysteries')">Показать все</button>
+
         </section>
     </main>
 
@@ -353,6 +365,40 @@
     </footer>
 
 </div>
+        <!-- СКРИПТ ДЛЯ СКРЫТИЯ СТАТЕЙ -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = ['animals', 'ocean', 'places', 'mysteries'];
+            sections.forEach(id => {
+                const section = document.getElementById(id);
+                if (!section) return;
+                const cards = section.querySelectorAll('.article-card');
+                const btn = section.querySelector('.show-more-btn');
+                
+                if (cards.length <= 3) {
+                    if (btn) btn.style.display = 'none';
+                } else {
+                    for (let i = 3; i < cards.length; i++) {
+                        cards[i].style.display = 'none';
+                    }
+                }
+            });
+        });
+
+        function toggleSection(id) {
+            const section = document.getElementById(id);
+            const cards = section.querySelectorAll('.article-card');
+            const btn = section.querySelector('.show-more-btn');
+            
+            const isHidden = cards[3].style.display === 'none';
+            
+            for (let i = 3; i < cards.length; i++) {
+                cards[i].style.display = isHidden ? 'block' : 'none';
+            }
+            
+            btn.innerText = isHidden ? 'Свернуть' : 'Показать все';
+        }
+    </script>
 
 </body>
 </html>
